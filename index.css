@@ -1,0 +1,80 @@
+* {
+    background-color: #0C0D24;
+    font-size: 100%;
+    font-family: "Kanit", sans-serif;
+
+}
+
+.text{
+    color: rgb(255, 255, 255);
+    font-size: clamp(50px, 7.5vw + 10px, 60px);
+    position: absolute;
+    top: 35px;
+    left: 572.1px;
+    padding: 15px;
+    text-align: center;
+
+}
+
+p {
+    font-size: 13px;
+    position: absolute;
+    top: 135px;
+}
+
+h2 {
+    font-size: 18px;
+    position: absolute;
+    top: 375px;
+    left: 60px;
+}
+
+h3 {
+    font-size: 18px;
+    position: absolute;
+    top: 250px;
+    left: 60px;
+}
+
+button {
+    background-color: rgb(57, 67, 247);
+    color: rgb(255, 255, 255);
+    border-radius: 40px;
+    margin: 4px 2px;
+    width: 300px;
+    font-size: clamp(25px, 7.5vw + 10px, 12px);
+    border: none;
+    cursor: pointer;
+}
+
+.login {
+    position: absolute;
+    left: 620px;
+    top: 450px;
+    background-color: #0C0D24;
+    border: 1px solid white;
+}
+
+.regristreer {
+    position: absolute;
+    top: 325px;
+    left: 620px;
+}
+
+.login:hover {
+    background-color: #242632c7;
+
+}
+
+.regristreer:hover {
+    background-color: rgb(79, 88, 252);
+
+}
+.logo {
+position: absolute;
+top: 175px;
+left: 150px;
+width: 375px;
+height: 300px;
+}
+
