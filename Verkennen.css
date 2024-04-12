@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+  
+  font-size: 100%;
+  font-family: "Kanit", sans-serif;
+  box-sizing: border-box
+}
+body{
+  background-color: #0C0D24;
+}
+.logo {
+  position: absolute;
+  top: 110px;
+  left: 90px;
+  width: 120px;
+  height: 100px;
+}
+.zoekbalk{
+  position: absolute;
+  left:1010px;
+  top: 15px;
+  font-size: 25px;
+}
+.trendingimg{
+  width: 30px;
+  position: absolute;
+  left:550px;
+  top: 190px;
+}
+
+.trending ul li{
+list-style: none;
+}
+.trending ul a {
+  list-style: none;
+  text-decoration: none;
+  position: relative;
+  left: 410px;
+  line-height: 20px;
+  font-size: 20px;
+  top: 230px;
+
+  color: white;
+}
+
+.wrapper {
+  margin: 0 auto;
+  opacity: 0.8;
+  
+  width: 400px;
+  position: absolute;
+  top: 10px;
+  left: 655px;
+}
+
+h5 {
+  color: white;
+  position: absolute;
+  left: -25px;
+  top: -50px;
+}
+
+input {
+  width: 100%;
+  background-color: white;
+  border: none;
+  height: 50px;
+  border-radius: 30px;
+  padding: 0px 40px 0px 10px;
+  font-size: 18px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  position: absolute;
+  border: none;
+  background: none;
+  top: 0;
+  right: 0;
+  height: 10px;
+  line-height: 50px;
+  padding: 0;
+  width: 50px;
+}
+.search{
+  width: 25px;
+  position: absolute;
+  left: 900px;
+  height: 10px;
+  top: 50px;
+  
+}
+button:focus {
+  outline: none;
+}
+
+button i {
+  width: 100%;
+  color: #6d7b98;
+  line-height: 50px;
+  font-size: 22px;
+}
+
+.results {
+  padding: 0px;
+height: 10px;
+}
+
+.results ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  
+
+}
+
+.results ul li {
+  list-style: none;
+  border-radius: 3px;
+  opacity: 1;
+  color: white;
+  display: none;
+  padding: 4px 5px;
+  transition: all .5s linear;
+}
+
+.show .results ul li {
+  opacity: 1;
+  display: block;
+}
+
+.show .results {
+  padding: 5px;
+}
+
+.results ul li:hover {
+  background: #272855;
+}
+
+.navbar{
+  width: 22%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 200px;
+  right:720px;
+  font-weight: 900;
+  font-size: 1.5em;
+  }
+  .navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 14px;
+    position: relative;
+    top: 0px;
+    right: 430px;
+  }
+  .navbar ul li a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    font-size: 1.0em;
+  }
+  .navbar ul li::after{
+    content: '';
+    height: 4px;
+    width: 0;
+    background-color: rgb(0, 179, 255);
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transition: 1.1s;
+  }
+  .navbar ul li:hover::after{
+    width: 100%;
+ 
+  }
+h1{
+  color: white;
+  font-size: 35px;
+  position: absolute;
+  left: 455px;
+  top: -15px;
+  text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  .logo {
+    position: absolute;
+    top: 110px;
+    left: 10px;
+    width: 80px;
+    height: 70px;
+  }
+  .navbar{
+    width: 25%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 200px;
+    left:400px;
+    font-weight: 900;
+    font-size: 1.0em;
+    }
+    .navbar ul li {
+      list-style: none;
+      display: inline-block;
+      margin: 14px;
+      position: relative;
+      top: 0px;
+      right: 430px;
+    }
+    .navbar ul li a{
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+      position: relative;
+      font-size: 1.0em;
+    }
+    .navbar ul li::after{
+      content: '';
+      height: 4px;
+      width: 0;
+      background-color: rgb(0, 179, 255);
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      transition: 1.1s;
+    }
+    .navbar ul li:hover::after{
+      width: 100%;
+   
+    }
+  h1{
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    left: 190px;
+    top: 5px;
+    text-align: center;
+  }
+  h5 {
+    color: white;
+    position: absolute;
+    left: -200px;
+    top: 190px;
+  }
+  
+  .trending ul a {
+    list-style: none;
+    text-decoration: none;
+    position: relative;
+    left: 150px;
+    line-height: 20px;
+    font-size: 20px;
+    top: 430px;
+  
+    color: white;
+  }
+  .wrapper {
+    margin: 0 auto;
+    opacity: 0.8;
+    
+    width: 200px;
+    position: absolute;
+    top: 60px;
+    left: 180px;
+  }
+  .zoekbalk{
+    position: absolute;
+    left:350px;
+    top: 68px;
+    font-size: 20px;
+  } 
+  .trendingimg{
+    width: 25px;
+    position: absolute;
+    left:270px;
+    top: 415px;
+  }
+  }
+

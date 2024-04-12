@@ -10,7 +10,7 @@
     font-size: clamp(50px, 7.5vw + 10px, 60px);
     position: absolute;
     top: 35px;
-    left: 572.1px;
+    left: 580.1px;
     padding: 15px;
     text-align: center;
 
@@ -23,18 +23,52 @@ p {
 }
 
 h2 {
-    font-size: 18px;
+    font-size: 20px;
     position: absolute;
     top: 375px;
     left: 60px;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 25px;
     position: absolute;
-    top: 250px;
-    left: 60px;
+    top: 230px;
+    left: 110px;
 }
+h4{
+    position: absolute;
+    top: 340px;
+    left: 180px;
+    font-size: 15px;
+}
+
+li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    }
+
+    li {
+        
+        float: left;
+        margin-right: 25px;
+        color: rgb(97, 97, 97);
+        list-style-type: none;
+        margin: 0.5;
+        padding: 0;
+        overflow: hidden;
+    }
+    ul{
+        position:absolute;
+        top: 770px;
+        left: 400px;
+    }
+
+    li a {
+        display: block;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
 
 button {
     background-color: rgb(57, 67, 247);
@@ -78,3 +112,91 @@ width: 375px;
 height: 300px;
 }
 
+@media only screen and (max-width: 600px) {
+    .text{
+        color: rgb(255, 255, 255);
+        position: absolute;
+        top: 85px;
+        left: 50px;
+        padding: 15px;
+        text-align: center;
+    
+    }
+    .logo {
+        position: absolute;
+        top: 5px;
+        left: 15px;
+        width: 95px;
+        height: 80px;
+        }
+        h1{
+            font-size: 50px;
+            
+    
+        }
+        h2 {
+            position: absolute;
+            top: 210px;
+            left: 80px;
+        }
+        h3 {
+            font-size: 18px;
+            position: absolute;
+            top: 30px;
+            left:110px ;
+            top: 200px;
+
+        }
+        h4{
+            position: absolute;
+            font-size: 15px;
+            top: 295px;
+            left: 170px;
+        }
+        p {
+            font-size: 12px;
+            position: absolute;
+            top: 110px;
+        }
+        .login {
+            position: absolute;
+            left: 40px;
+            top: 460px;
+            background-color: #0C0D24;
+            border: 1px solid white;
+        }
+        
+        .regristreer {
+            position: absolute;
+            top: 335px;
+            left: 70px;
+        }
+        li:hover{
+            text-decoration: underline;
+            cursor: pointer;
+            }
+        
+            li {
+                
+                float: left;
+                margin-right: 25px;
+                color: rgb(97, 97, 97);
+                list-style-type: none;
+                margin: 0.5;
+                padding: 0;
+                overflow: hidden;
+            }
+            ul{
+                position:absolute;
+                top: 780px;
+                left: 0px;
+                font-size: 10px;
+            }
+        
+            li a {
+                display: block;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+    }

@@ -14,13 +14,13 @@ body{
 }
 .logo{
   position: absolute;
-  top: -200px;
-  left: 170px;
+  top: -140px;
+  left: 160px;
   width: 150px;
 }
 .center{
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 500px;
@@ -116,4 +116,23 @@ input[type="submit"]:hover{
 }
 .signup_link a:hover{
   text-decoration: underline;
+}
+@media only screen and (max-width: 600px) {
+  .center{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 600px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  }
+  .logo{
+    position: absolute;
+    top: -130px;
+    left: 120px;
+    width: 130px;
+  }
 }
