@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Chirpify Startpagina</title>
+  <link rel="stylesheet" href="P3home.css">
+</head>
+<body>
+	<div class="logo"><a href="P3home.html"><img src="Chirpifylogo2024nummer3.png" width="110px"></a></div>
+  <div id="tweet-box">
+    <textarea id="tweet-text" placeholder="Wat gebeurt er?"></textarea>
+    <button id="add-image"><i class="fa-solid fa-image"></i></button>
+    <input type="file" id="image-file" style="display: none;">
+    <button id="post-tweet">Plaatsen</button>
+    <button id="post-tweet2">Plaatsen</button>
+  </div>
+  <div id="tweet-feed"></div>
+
+    <div class="navbar">
+      <ul>
+        <li><a href="P3home.html"><i class="fa-solid fa-house"></i> Startpagina</a></li>
+        <li><a href="Verkennen.html"><i class="fa-solid fa-magnifying-glass"></i> Verkennen</a></li>
+        <li><a href="berichten.html"><i class="fa-solid fa-message"></i> Berichten</a></li>
+        <li><a href="profiel.html"><i class="fa-solid fa-user"></i> Profiel</a></li>
+        <li><a href="P3overons.html"><i class="fa-solid fa-bars"></i> Overons</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="wrapper">
+        <input type="text" name="search" id="search" placeholder="Typ om te zoeken" autocomplete="chrome-off">
+        <span class="search-icon"><i class="fas fa-search"></i></span>
+        <div class="results">
+            <ul id="search-results">
+            </ul>
+        </div>
+    </div>
+    
+  </div>
+
+  <div class="plaatsen-knop"></div>
+
+  <script>
+    let zoeken = [
+     'Husseen Aden',
+     'Ziad Toumi',
+     'Shaakir Omar',
+   ];
+  
+   const searchInput = document.getElementById('search');
+   const searchWrapper = document.querySelector('.wrapper');
+   const resultsWrapper = document.querySelector('.results');
+   const searchResults = document.getElementById('search-results');
+  
+   searchInput.addEventListener('keyup', () => {
+     let input = searchInput.value.toLowerCase();
+     let result = zoeken.find(item => item.toLowerCase().includes(input));
+     if (result) {
+       searchWrapper.classList.add('show');
+       searchResults.innerHTML = `<li><a href="${result.toLowerCase().replace(' ', '')}.html">${result}</a></li>`;
+     } else {
+       searchWrapper.classList.remove('show');
+       searchResults.innerHTML = '';
+     }
+   });
+
+   document.addEventListener("DOMContentLoaded", function() {
+    const tweetText = document.getElementById("tweet-text");
+    const addImageBtn = document.getElementById("add-image");
+    const imageFileInput = document.getElementById("image-file");
+    const postTweetBtn = document.getElementById("post-tweet");
+    const tweetFeed = document.getElementById("tweet-feed");
+
+    addImageBtn.addEventListener("click", function() {
+      imageFileInput.click();
+    });
+
+    postTweetBtn.addEventListener("click", function() {
+      const tweetContent = tweetText.value.trim();
+      if (tweetContent !== "") {
+        const tweetElement = document.createElement("div");
+        tweetElement.classList.add("tweet");
+        tweetElement.innerHTML = `
+          <div class="tweet-content">
+            <p>${tweetContent}</p>
+          </div>
+        `;
+        tweetFeed.prepend(tweetElement);
+        tweetText.value = "";
+        imageFileInput.value = "";
+      }
+    });
+  });
+
+  
+    const tweetText = document.getElementById('tweet-text');
+    const addImageButton = document.getElementById('add-image');
+    const imageFileInput = document.getElementById('image-file');
+    const postTweetButton = document.getElementById('post-tweet');
+    const tweetFeed = document.getElementById('tweet-feed');
+
+    addImageButton.addEventListener('click', function() {
+      imageFileInput.click();
+    });
+
+    postTweetButton.addEventListener('click', function() {
+      const text = tweetText.value.trim();
+      const imageFile = imageFileInput.files[0];
+
+      if (!text) {
+        alert('AUB typ wat tekst voor uw tweet.');
+        return;
+      }
+
+      const tweet = document.createElement('div');
+      tweet.classList.add('tweet');
+
+      const username = document.createElement('p');
+      username.textContent = "Gebruiker";
+      username.classList.add('username');
+      tweet.appendChild(username);
+
+      const tweetTextElem = document.createElement('p');
+      tweetTextElem.textContent = text;
+      tweet.appendChild(tweetTextElem);
+
+     
+      const likeButton = document.createElement('button');
+      likeButton.textContent = 'Like';
+      likeButton.classList.add('like-button');
+      likeButton.addEventListener('click', function() {
+        alert('Tweet geliket!');
+      });
+      tweet.appendChild(likeButton);
+
+   
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Delete';
+      deleteButton.classList.add('delete-button');
+      deleteButton.addEventListener('click', function() {
+        tweet.remove();
+      });
+      tweet.appendChild(deleteButton);
+
+ 
+      const editButton = document.createElement('button');
+      editButton.textContent = 'Bewerk';
+      editButton.classList.add('edit-button');
+      editButton.addEventListener('click', function() {
+   
+        const newText = prompt('Bewerk uw tweet:', text);
+        if (newText !== null) {
+          tweetTextElem.textContent = newText;
+        }
+      });
+      tweet.appendChild(editButton);
+
+      if (imageFile) {
+        const image = document.createElement('img');
+        image.src = URL.createObjectURL(imageFile);
+        tweet.appendChild(image);
+      }
+
+      tweetFeed.appendChild(tweet);
+
+      tweetText.value = '';
+      imageFileInput.value = '';
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+  const tweetText = document.getElementById("tweet-text");
+  const addImageBtn = document.getElementById("add-image");
+  const imageFileInput = document.getElementById("image-file");
+  const tweetFeed = document.getElementById("tweet-feed");
+  const postTweetBtn = document.getElementById("post-tweet");
+  const postTweetBtn2 = document.getElementById("post-tweet2");
+
+  addImageBtn.addEventListener("click", function() {
+    imageFileInput.click();
+  });
+
+  postTweetBtn.addEventListener("click", postTweet);
+  postTweetBtn2.addEventListener("click", postTweet);
+
+  function postTweet() {
+    const tweetContent = tweetText.value.trim();
+    if (tweetContent !== "") {
+      const tweetElement = document.createElement("div");
+      tweetElement.classList.add("tweet");
+      
+      const username = document.createElement("p");
+      username.textContent = "Gebruiker";
+      username.classList.add("username");
+      tweetElement.appendChild(username);
+      
+      const tweetContentElem = document.createElement("p");
+      tweetContentElem.textContent = tweetContent;
+      tweetElement.appendChild(tweetContentElem);
+      
+      const likeButton = document.createElement("button");
+      likeButton.textContent = "Like";
+      likeButton.classList.add("like-button");
+      likeButton.addEventListener("click", function() {
+        alert("Tweet geliket!");
+      });
+      tweetElement.appendChild(likeButton);
+      
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "Delete";
+      deleteButton.classList.add("delete-button");
+      deleteButton.addEventListener("click", function() {
+        tweetElement.remove();
+      });
+      tweetElement.appendChild(deleteButton);
+      
+      const editButton = document.createElement("button");
+      editButton.textContent = "Bewerk";
+      editButton.classList.add("edit-button");
+      editButton.addEventListener("click", function() {
+        const newText = prompt("Bewerk uw tweet:", tweetContent);
+        if (newText !== null) {
+          tweetContentElem.textContent = newText;
+        }
+      });
+      tweetElement.appendChild(editButton);
+
+      tweetFeed.prepend(tweetElement);
+      tweetText.value = "";
+      imageFileInput.value = "";
+    }
+  }
+});
+
+   </script>
+</body>
+</html>
