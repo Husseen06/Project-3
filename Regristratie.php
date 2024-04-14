@@ -1,20 +1,26 @@
 <?php
+// Controleer of het formulier is verzonden via POST
 if(isset($_POST['submit'])) {
+    // Als het formulier is verzonden, druk dan de ontvangen gegevens af
     echo "<pre>".print_r($_POST, true)."</pre>";
 }
-$naam = $_POST['naam'];
-$achternaam = $_POST['achternaam'];
-$email = $_POST['email'];
-$gebruikersnaam = $_POST['gebruikersnaam'];
-$wachtwoord = $_POST['wachtwoord'];
 
+// Haal de ingediende formuliergegevens op en wijs ze toe aan variabelen
+$naam = $_POST['naam']; // Naam
+$achternaam = $_POST['achternaam']; // Achternaam
+$email = $_POST['email']; // E-mailadres
+$gebruikersnaam = $_POST['gebruikersnaam']; // Gebruikersnaam
+$wachtwoord = $_POST['wachtwoord']; // Wachtwoord
 
- 
-$dsn = "mysql:host=localhost;dbname=chirpify project";
-$conn = new PDO($dsn, 'root', '');
- 
+// Maak een databaseverbinding met behulp van PDO
+$dsn = "mysql:host=localhost;dbname=chirpify project"; // Data Source Name
+$conn = new PDO($dsn, 'root', ''); // PDO-verbinding
+
+// Bereid een SQL-statement voor om gegevens in de database in te voegen
 $stmt = $conn->prepare("INSERT INTO inlog (naam, achternaam, email, gebruikersnaam, wachtwoord)
                         VALUES(?, ?, ?, ?, ?)");
+
+// Voer het SQL-statement uit door de waarden in te voegen
 $stmt->execute([
-   $naam, $achternaam, $gebruikersnaam, $wachtwoord, $email
+   $naam, $achternaam, $email, $gebruikersnaam, $wachtwoord
 ]);
