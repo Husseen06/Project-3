@@ -24,3 +24,5 @@ $stmt = $conn->prepare("INSERT INTO inlog (naam, achternaam, email, gebruikersna
 $stmt->execute([
    $naam, $achternaam, $email, $gebruikersnaam, $wachtwoord
 ]);
+header('Location: P3home.html');
+exit;
