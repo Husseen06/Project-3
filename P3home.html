@@ -45,30 +45,111 @@
 
   <div class="plaatsen-knop"></div>
 
-  <script>
-    let zoeken = [
-     'Husseen Aden',
-     'Ziad Toumi',
-     'Shaakir Omar',
-   ];
-  
-   const searchInput = document.getElementById('search');
-   const searchWrapper = document.querySelector('.wrapper');
-   const resultsWrapper = document.querySelector('.results');
-   const searchResults = document.getElementById('search-results');
-  
-   searchInput.addEventListener('keyup', () => {
-     let input = searchInput.value.toLowerCase();
-     let result = zoeken.find(item => item.toLowerCase().includes(input));
-     if (result) {
-       searchWrapper.classList.add('show');
-       searchResults.innerHTML = `<li><a href="${result.toLowerCase().replace(' ', '')}.html">${result}</a></li>`;
-     } else {
-       searchWrapper.classList.remove('show');
-       searchResults.innerHTML = '';
-     }
-   });
+  <div class="volglijst">
+    <h3>Volgen</h3>
+    <ul>
+      <li><a href="https://twitter.com/NatGeoPhotos">@NatGeoPhotos</a> <button onclick="followAccount('@NatGeoPhotos')">Volg</button></li>
+      <li><a href="https://twitter.com/NASA">@NASA</a> <button onclick="followAccount('@NASA')">Volg</button></li>
+      <li><a href="https://twitter.com/elonmusk">@elonmusk</a> <button onclick="followAccount('@elonmusk')">Volg</button></li>
+      <li><a href="https://twitter.com/nytimesphoto">@nytimesphoto</a> <button onclick="followAccount('@nytimesphoto')">Volg</button></li>
+      <li><a href="https://twitter.com/thephotosociety">@thephotosociety</a> <button onclick="followAccount('@thephotosociety')">Volg</button></li>
+    </ul>
+  </div>
 
+  <div class="Trends">
+    <h4>Trending</h4>
+    <ul>
+      <li><a href="https://www.voetbal.nl/inloggen">1. Voetbal</a></li>
+      <li><a href="https://www.tulpen.nl/">2. Tulpen</a></li>
+      <li><a href="https://www.fietsen.nl/">3. Fietsen</a></li>
+      <li><a href="https://www.stroopwafels.com/nl/stroopwafels">4. Stroopwafels</a></li>
+      <li><a href="https://www.kaas.nl/">5. Kaas</a></li>
+    </ul>
+  </div>
+
+  <div class="Profiel">
+    <div class="Profiel img">
+      <a href="profiel.html">
+      <img src="ziad.png"></a>
+    </div>
+    <h5>Ziad Toumi</h5>
+  </div>
+
+  <div class="notification-bell" onclick="showNotifications()">
+    <i class="fas fa-bell"></i>
+    <span id="notification-count" class="notification-badge">3</span>
+  </div>
+  
+  <div id="notification-popup" style="display: none;">
+    <ul id="notification-list">
+    
+      <li>
+        <img src="husseen.png.jpg" alt="Husseen Aden's profielfoto"> 
+        <a href="husseen_aden.html" onclick="checkMessages('Husseen Aden')">Check je chatberichten van Husseen Aden</a>
+      </li>
+      <li>
+        <img src="ziad.jpg" alt="Ziad Toumi's profielfoto"> 
+        <a href="ziad_toumi.html" onclick="checkMessages('Ziad Toumi')">Check je chatberichten van Ziad Toumi</a>
+      </li>
+      <li>
+        <img src="shaakir.png.jpg" alt="Shaakir Omar's profielfoto">
+        <a href="shaakir_omar.html" onclick="checkMessages('Shaakir Omar')">Check je chatberichten van Shaakir Omar</a>
+      </li>
+    </ul>
+  </div>
+  
+
+  <script>
+// JavaScript-functie om de notificatiepopup te tonen of te verbergen
+function showNotifications() {
+      var popup = document.getElementById("notification-popup");
+      if (popup.style.display === "none") {
+        popup.style.display = "block";
+      } else {
+        popup.style.display = "none";
+      }
+    }
+// JavaScript-functie om een melding te tonen wanneer op een chatberichtlink wordt geklikt
+    function checkMessages(user) {
+      alert("Check je chatberichten van " + user);
+    }
+
+
+function followAccount(username) {
+      alert('Je volgt nu ' + username);
+      
+    }
+    
+   let zoeken = [
+   'Husseen Aden',
+   'Ziad Toumi',
+   'Shaakir Omar',
+ ];
+
+ const searchInput = document.getElementById('search');
+ const searchWrapper = document.querySelector('.wrapper');
+ const resultsWrapper = document.querySelector('.results');
+ const searchResults = document.getElementById('search-results');
+
+ searchInput.addEventListener('keyup', () => {
+   let input = searchInput.value.toLowerCase();
+   let result = zoeken.find(item => item.toLowerCase().includes(input));
+   if (result) {
+     searchWrapper.classList.add('show');
+     if (result === 'Husseen Aden') {
+       searchResults.innerHTML = `<li><a href="overonsHusseen.html">${result}</a></li>`;
+     } else if (result === 'Shaakir Omar') {
+       searchResults.innerHTML = `<li><a href="OveronsShaakir.html">${result}</a></li>`;
+     } else if (result === 'Ziad Toumi') {
+       searchResults.innerHTML = `<li><a href="overonsZiad.html">${result}</a></li>`;
+     } else {
+       searchResults.innerHTML = `<li><a href="${result.toLowerCase().replace(' ', '')}.html">${result}</a></li>`;
+     }
+   } else {
+     searchWrapper.classList.remove('show');
+     searchResults.innerHTML = '';
+   }
+ });
    document.addEventListener("DOMContentLoaded", function() {
     const tweetText = document.getElementById("tweet-text");
     const addImageBtn = document.getElementById("add-image");
@@ -121,7 +202,7 @@
       tweet.classList.add('tweet');
 
       const username = document.createElement('p');
-      username.textContent = "Gebruiker";
+      username.textContent = "Ziad Toumi";
       username.classList.add('username');
       tweet.appendChild(username);
 
@@ -193,7 +274,7 @@
       tweetElement.classList.add("tweet");
       
       const username = document.createElement("p");
-      username.textContent = "Gebruiker";
+      username.textContent = "Ziad Toumi";
       username.classList.add("username");
       tweetElement.appendChild(username);
       
