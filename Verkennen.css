@@ -9,12 +9,51 @@
 body{
   background-color: #0C0D24;
 }
+.volglijst {
+  border: 2px solid #0c0d24;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #191a2b;
+  width: 15vw;
+  text-align: center;
+  position: absolute;
+  font-size: 15px;
+  top: 155px;
+  right: 70px;
+}
+.volglijst h3 {
+  color: white;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.volglijst ul {
+  list-style-type: none;
+  padding: 0;
+}
+.volglijst li {
+  margin-bottom: 5px;
+}
+.volglijst li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.volglijst li button {
+  background-color: rgb(0, 179, 255);
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+font-size: 15px;
+  position:relative;
+  cursor: pointer;
+}
 .logo {
   position: absolute;
-  top: 110px;
-  left: 90px;
-  width: 120px;
-  height: 100px;
+  top: 45px;
+  left:100px;
+  cursor: pointer;
 }
 .zoekbalk{
   position: absolute;
@@ -26,7 +65,7 @@ body{
   width: 30px;
   position: absolute;
   left:550px;
-  top: 190px;
+  top: 195px;
 }
 
 .trending ul li{
@@ -57,8 +96,8 @@ list-style: none;
 h5 {
   color: white;
   position: absolute;
-  left: -25px;
-  top: -50px;
+  left: -45px;
+  top: -5px;
 }
 
 input {
@@ -76,28 +115,7 @@ input:focus {
   outline: none;
 }
 
-button {
-  position: absolute;
-  border: none;
-  background: none;
-  top: 0;
-  right: 0;
-  height: 10px;
-  line-height: 50px;
-  padding: 0;
-  width: 50px;
-}
-.search{
-  width: 25px;
-  position: absolute;
-  left: 900px;
-  height: 10px;
-  top: 50px;
-  
-}
-button:focus {
-  outline: none;
-}
+
 
 button i {
   width: 100%;
@@ -148,16 +166,16 @@ height: 10px;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  top: 200px;
-  right:720px;
+  position: fixed;
+  top: 160px;
+  right:700px;
   font-weight: 900;
   font-size: 1.5em;
   }
   .navbar ul li {
     list-style: none;
     display: inline-block;
-    margin: 14px;
+    margin: 14px; 
     position: relative;
     top: 0px;
     right: 430px;
@@ -182,7 +200,7 @@ height: 10px;
   }
   .navbar ul li:hover::after{
     width: 100%;
- 
+  
   }
 h1{
   color: white;
@@ -195,6 +213,44 @@ h1{
 a{
   color: white;
 }
+.Profiel {
+  position: fixed;
+  bottom: 20px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  font-family: "Kanit", sans-serif;
+  padding: 10px;
+  border-radius: 10px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Profiel .img {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  border-radius: 50%; /* Maakt de afbeelding meer rond */
+  margin-right: 15px; /* Meer ruimte tussen afbeelding en tekst */
+}
+
+
+.Profiel img {
+  width: 128%;
+  height: 100%;
+  object-fit: cover;
+  position: sticky;
+}
+
+.Profiel h5 {
+  margin: 0;
+  font-size: 18px;
+  position: absolute;
+  left: 90px;
+  top: -20px;
+  width: 25vw;
+  color: white;
+}
+
 @media only screen and (max-width: 600px) {
   .logo {
     position: absolute;
@@ -256,7 +312,7 @@ a{
     color: white;
     position: absolute;
     left: -200px;
-    top: 190px;
+    top: 20px;
   }
   
   .trending ul a {
@@ -265,10 +321,22 @@ a{
     position: relative;
     left: 150px;
     line-height: 20px;
-    font-size: 20px;
-    top: 430px;
+    font-size: 15px;
+    top: 255px;
   
     color: white;
+  }
+  .volglijst {
+    border: 2px solid #0c0d24;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #191a2b;
+    width: 25vw;
+    text-align: center;
+    position: absolute;
+    font-size: 12px;
+    top: 215px;
+    right: 15px;
   }
   .wrapper {
     margin: 0 auto;
@@ -289,7 +357,7 @@ a{
     width: 25px;
     position: absolute;
     left:270px;
-    top: 415px;
+    top: 245px;
   }
   }
 
